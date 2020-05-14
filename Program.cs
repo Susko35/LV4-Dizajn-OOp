@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LV4_Dizajn_OOP.Fasada;
+using System;
 using System.Collections.Generic;
 
 namespace LV4_Dizajn_OOP
@@ -30,11 +31,24 @@ namespace LV4_Dizajn_OOP
             printer.PrintTotalPrice(rentList);
 
             HotItem hitVid = new HotItem(new Video("Hit video"));
-            DiscountItem discountBook = new DiscountItem(new Book("Hit knjiga"));
+            DiscountItem discountBook = new DiscountItem(new Book("Discount knjiga"));
             rentList.Add(hitVid);
             rentList.Add(discountBook);
             printer.DisplayItems(rentList);
             printer.PrintTotalPrice(rentList);
+
+            EmailValidator emailValidator = new EmailValidator(12);
+            PasswordValidator passwordValidator = new PasswordValidator(6);
+            String passwordToCheck = new string("sIFra23sd");
+            String passwordToCheck2 = new string("si3sd");
+            String emailToCheck = new string("emailkojzadovoljavauvjet@nesto.com");
+            String emailToCheck2 = new string("emailnezadovoljava@sd@.rand");
+
+            Console.WriteLine("\n\nProvjera: ");
+            Console.WriteLine("sIFra23sd: "+passwordValidator.IsValidPassword(passwordToCheck));
+            Console.WriteLine("si3sd: " + passwordValidator.IsValidPassword(passwordToCheck2));
+            Console.WriteLine("emailkojzadovoljavauvjet@nesto.com: " + emailValidator.IsValidAddress(emailToCheck));
+            Console.WriteLine("emailnezadovoljava@sd@.rand: " + emailValidator.IsValidAddress(emailToCheck2));
         }
     }
 }

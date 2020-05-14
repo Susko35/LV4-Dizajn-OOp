@@ -4,7 +4,9 @@ using System.Text;
 
 namespace LV4_Dizajn_OOP.Fasada
 {
-    class IEmailValidatorService
+    interface IEmailValidatorService
     {
+        bool IsValidAddress(String candidate);
     }
+
 }

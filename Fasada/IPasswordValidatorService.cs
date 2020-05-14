@@ -4,7 +4,8 @@ using System.Text;
 
 namespace LV4_Dizajn_OOP.Fasada
 {
-    class IPasswordValidatorService
+    interface IPasswordValidatorService
     {
+        bool IsValidPassword(String candidate);
     }
 }

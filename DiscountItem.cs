@@ -6,11 +6,11 @@ namespace LV4_Dizajn_OOP
 {
     class DiscountItem : RentableDecorator
     {
-        private readonly double DiscountItemMinus = 2.99;
+        private readonly double DiscountItemCoeficient = 0.85;
         public DiscountItem(IRentable rentable) : base(rentable) { }
         public override double CalculatePrice()
         {
-            return base.CalculatePrice() - this.DiscountItemMinus;
+            return base.CalculatePrice() * this.DiscountItemCoeficient;
         }
         public override String Description
         {
