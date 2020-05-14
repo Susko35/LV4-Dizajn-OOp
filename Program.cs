@@ -28,6 +28,13 @@ namespace LV4_Dizajn_OOP
             RentingConsolePrinter printer = new RentingConsolePrinter();
             printer.DisplayItems(rentList);
             printer.PrintTotalPrice(rentList);
+
+            HotItem hitVid = new HotItem(new Video("Hit video"));
+            DiscountItem discountBook = new DiscountItem(new Book("Hit knjiga"));
+            rentList.Add(hitVid);
+            rentList.Add(discountBook);
+            printer.DisplayItems(rentList);
+            printer.PrintTotalPrice(rentList);
         }
     }
 }
