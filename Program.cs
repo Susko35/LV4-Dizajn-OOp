@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LV4_Dizajn_OOP
 {
@@ -18,6 +19,15 @@ namespace LV4_Dizajn_OOP
             for (int i = 0; i < 5; i++)
                 Console.WriteLine(adapter.CalculateAveragePerColumn(csvFile)[i]);
 
+            List<IRentable> rentList = new List<IRentable>();
+            Video video = new Video("Video dokumentarac");
+            Book book = new Book("Knjiga fantazija");
+            rentList.Add(video);
+            rentList.Add(book);
+
+            RentingConsolePrinter printer = new RentingConsolePrinter();
+            printer.DisplayItems(rentList);
+            printer.PrintTotalPrice(rentList);
         }
     }
 }

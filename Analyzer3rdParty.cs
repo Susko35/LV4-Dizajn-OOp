@@ -22,7 +22,7 @@ namespace LV4_Dizajn_OOP
             int rowCount = data.Length;
             int colCount = data[0].Length;
             double[] results = new double[colCount];
-            double temp=0;
+            double temp;
             for (int i = 0; i < rowCount; i++)
             {
                 temp = 0;
@@ -30,7 +30,7 @@ namespace LV4_Dizajn_OOP
                 {
                     temp = temp + data[i][j];
                 }
-                results[i] = temp / colCount;
+                results[i] = temp / rowCount;
             }
             return results;
         }
